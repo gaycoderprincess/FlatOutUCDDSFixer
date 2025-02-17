@@ -35,6 +35,10 @@ int main(int argc, char *argv[]) {
 		arr[0x24] = 1;
 		fileChanged = true;
 	}
+	if (!strcmp(argv[2], "-undo") && size > 0x24 && (arr[0x24] & 1) != 0) {
+		arr[0x24] = 0;
+		fileChanged = true;
+	}
 	if (!fileChanged) {
 		std::cout << "File doesn't need patching";
 		fclose(file);
