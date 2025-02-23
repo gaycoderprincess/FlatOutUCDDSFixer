@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
 		arr[0x24] = 1;
 		fileChanged = true;
 	}
-	if (!strcmp(argv[2], "-undo") && size > 0x24 && (arr[0x24] & 1) != 0) {
+	if (argc > 2 && !strcmp(argv[2], "-undo") && size > 0x24 && (arr[0x24] & 1) != 0) {
 		arr[0x24] = 0;
 		fileChanged = true;
 	}
